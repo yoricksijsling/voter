@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voter</title>
+  <%= stylesheet_link_tag 'global' %>
+  <%= stylesheet_link_tag 'print', :media => :print %>
+  <!--[if IE 6]> <%= stylesheet_link_tag 'ie' %> <![endif]-->
+  <%= javascript_include_tag "mootools-core" %>
+  <%= javascript_include_tag "rails" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
