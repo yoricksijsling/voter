@@ -26,7 +26,7 @@ class Poll
   end
   def participant_count=(count)
     throw :burp if self.participants.any?
-    (0..(count-1)).map do |i|
+    (0..(count.to_i-1)).map do |i|
       self.participants << Participant.new(:code => rand(1000000).to_s)
     end
   end
