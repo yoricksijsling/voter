@@ -355,3 +355,16 @@ hr.space {
 
 .clear {
   clear: both; }
+
+.options .title {
+  display: inline; }
+.options .vote_buttons {
+  display: inline; }
+.options .vote_buttons a {
+  cursor: pointer; }
+.options .voted_for .vote_for {
+  font-weight: bold; }
+.options .voted_against .vote_against {
+  font-weight: bold; }
+.options .voted_empty .vote_empty {
+  font-weight: bold; }

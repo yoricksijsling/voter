@@ -1,0 +1,20 @@
+%h1= @poll.title
+
+%p
+	= @poll.description
+
+= form_for @poll, :url => poll_vote_url(@poll) do |f|
+	= f.fields_for @participant do |pf|
+		= pf.hidden_field :code
+		= pf.hidden_field :votes_for, :value => ""
+		= pf.hidden_field :votes_against, :value => ""
+		%h2 Kandidaten
+		%ul.options
+			- @poll.options.each do |option|
+				%li.option{ :class => [@participant.votes_for.include?(option._id) && "voted_for", @participant.votes_against.include?(option._id) && "voted_against"], "data-option_id" => option._id }
+					.title= option.title
+					.vote_buttons
+						%a.vote_for voor
+						%a.vote_against tegen
+						%a.vote_empty maakt niet uit
+	= f.submit "Stemmen invoeren"

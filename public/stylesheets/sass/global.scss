@@ -1,2 +1,13 @@
 @import "blueprint/global.scss";
 
+.options {
+	
+	.title { display: inline; }
+	.vote_buttons { display: inline; }
+	.vote_buttons a { cursor: pointer; }
+
+	.voted_for .vote_for { font-weight: bold; }
+	.voted_against .vote_against { font-weight: bold; }
+	.voted_empty .vote_empty { font-weight: bold; }
+
+}

@@ -1,4 +1,14 @@
 Voter::Application.routes.draw do
+  
+  resources :polls do
+    # resources :participants
+    get 'enter_code'
+    post 'show_options'
+    put 'vote'
+  end
+  
+  root :to => "polls#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

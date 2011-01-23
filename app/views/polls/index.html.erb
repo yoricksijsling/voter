@@ -1,0 +1,8 @@
+<h1>Polls</h1>
+
+<% @polls.each do |poll| %>
+	<div class='team_tile'>
+		<%= link_to poll.title, poll %>
+	</div>
+<% end %>
+
