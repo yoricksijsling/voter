@@ -1,5 +1,5 @@
 class PollsController < ApplicationController
-  before_filter :find_poll, :only => [:show_options, :vote]
+  before_filter :find_poll, :only => [:show, :show_options, :show_results, :vote]
   before_filter :require_participant, :only => [:show_options, :vote]
 
   def index
@@ -13,15 +13,21 @@ class PollsController < ApplicationController
   def show_options
   end
   
+  def show_results
+  end
+  
   def vote
     @participant.votes_for = params[:poll][:participant][:votes_for].split ','
     @participant.votes_against = params[:poll][:participant][:votes_against].split ','
-    @participant.save
+    @poll.save
     render :action => "show_options"
   end
 
   def new
     @poll = Poll.new
+  end
+  
+  def show
   end
 
   # def edit

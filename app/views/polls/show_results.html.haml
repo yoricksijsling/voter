@@ -1,0 +1,18 @@
+%table
+	%tr
+		%th Naam
+		%th Voor
+		%th Tegen
+	- @poll.options.each do |option|
+		%tr
+			%td= option.title
+			%td= @poll.participants.select{|par| par.votes_for.include? option._id}.count
+			%td= @poll.participants.select{|par| par.votes_against.include? option._id}.count
+
+- @poll.participants.each do |participant|
+	.afsdfads
+		%strong= participant.code
+		Voor:
+		= participant.votes_for.map{|v| @poll.options.select{|o|o._id == v}.first}.map{|o|o.title}.join(', ')
+		Tegen:
+		= participant.votes_against.map{|v| @poll.options.select{|o|o._id == v}.first}.map{|o|o.title}.join(', ')

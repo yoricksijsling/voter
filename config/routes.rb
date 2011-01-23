@@ -5,6 +5,7 @@ Voter::Application.routes.draw do
     get 'enter_code'
     post 'show_options'
     put 'vote'
+    get 'show_results'
   end
   
   root :to => "polls#index"

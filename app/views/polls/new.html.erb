@@ -2,11 +2,18 @@
 
 <%= form_for @poll do |f| %>
 
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.label :title %><br />
+	<%= f.text_field :title %><br />
 	
-	<%= f.label :description %>
-	<%= f.text_field :description %>
+	<%= f.label :description %><br />
+	<%= f.text_field :description %><br />
+	
+	<%= f.label :options %><br />
+	<%= f.text_field :options_csv %><br />
+	
+	<%= f.label :participant_count %><br />
+	<%= f.text_field :participant_count %><br />
+	
 	
 	<%= f.submit %>
 	
